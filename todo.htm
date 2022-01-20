@@ -1,0 +1,154 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
+       .list{
+           align-items: center;
+           margin: 20px 35%;
+           
+       }
+
+       body{
+           background:linear-gradient(to right,rgb(144, 245, 144),rgb(55, 159, 245));
+           font-family:  'Roboto Mono', monospace;;
+       }
+
+       .inp{
+           
+            margin-left: 37%;
+            margin-top: 1%;
+            background:linear-gradient(to right,rgb(169, 220, 253),rgb(250, 250, 170)) ;
+            margin-right: 35%;
+            padding: 20px;
+            padding-bottom: 10px;
+            padding-left: 35px;
+            border-radius: 10px;
+            word-wrap: break-word;
+            word-break: break-all;
+
+       }
+
+       #ent{
+           
+            border-radius: 15px;
+            color: rgb(250, 250, 250);
+            background-color: rgb(71, 182, 247);
+            margin-left: 110px;
+            border: 0ch;
+            padding: 5px;
+            cursor: pointer;
+
+       }
+       #ent:hover{
+           background-color: rgb(248, 249, 250);
+           color: rgb(71, 182, 247);
+       }
+
+       #tsk{
+           width: minmax(50px,auto);
+       }
+
+
+    </style>
+</head>
+
+<body >
+
+
+
+    <div class="inp">
+        <label for="tm">Enter start Time</label>
+        <input type="time" id="tm">
+        <br><br>
+
+        <label for="tsk">Enter Task</label>
+        <input type="text" id="tsk">
+        <br><br>
+
+
+        <input type="submit" id="ent">
+
+    </div>
+
+    <div class="list" >
+
+        <ol type="1" id="lst"></ol>
+        
+
+    </div>
+    <script>
+        let s=document.getElementById('ent');
+        let t=document.getElementById('tm');
+        let tk=document.getElementById('tsk');
+
+        let ls=document.getElementById('lst');
+
+        let cnt=0;
+
+        s.addEventListener('click',()=>{
+
+            if(t.value=='' || tk.value==''){
+                alert("Enter Some Values");
+            }
+
+            else{
+            var par=document.createElement('li');
+            //var par1=document.createElement('b');
+            //cnt++;
+
+            let btn=document.createElement('button');
+            btn.innerHTML="delete";
+            let btn2=document.createElement('button');
+            btn2.innerHTML="done";
+
+            par.innerHTML=t.value+" &rarr; "+tk.value+" &nbsp; ";
+
+            par.style.border="2px solid black";
+            par.style.borderRadius="5px";
+            
+            // par.style.textAlign="center";
+            par.style.padding="5px";
+            par.style.margin="5px";            
+            par.style.width="fit-content";            
+            par.style.backgroundColor="rgb(250, 126, 121)";  
+
+
+            //par1.innerHTML=tk.value;
+            //par.innerHTML+=" &nbsp; ";
+            
+            par.appendChild(btn2);
+            btn2.style.margin="5px";
+            par.appendChild(btn);
+            
+            t.value="";
+            tk.value="";
+
+            ls.appendChild(par);
+            //ls.appendChild(par1);
+
+            btn.addEventListener('click',()=>{
+                par.style.display="none";
+            })
+
+            btn2.addEventListener('click',()=>{
+                par.style.textDecoration="line-through";
+                par.style.backgroundColor="rgb(113, 252, 113)";
+            
+            })
+
+            }
+
+            
+
+        })
+
+
+
+
+    </script>
+</body>
+</html>
