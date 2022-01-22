@@ -31,10 +31,6 @@
             word-break: break-all;
 
        }
-        
-/*         li::before {content: counter(li); color: white;
-  display: inline-block; width: 1em;
-  margin-left: -1em} */
 
        #ent{
            
@@ -65,8 +61,6 @@
 
 
     <div class="inp">
-        
-  
         <label for="tm">Enter start Time</label>
         <input type="time" id="tm">
         <br><br>
@@ -93,7 +87,7 @@
 
         let ls=document.getElementById('lst');
 
-               //counter(li)=1;
+        let cnt=0;
 
         s.addEventListener('click',()=>{
 
@@ -104,9 +98,7 @@
             else{
             var par=document.createElement('li');
             //var par1=document.createElement('b');
-            
-                
-                //counter(li)++;
+            //cnt++;
 
             let btn=document.createElement('button');
             btn.innerHTML="delete";
