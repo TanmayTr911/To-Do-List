@@ -32,7 +32,7 @@
 
        }
         
-        li::before {content: counter(li); color: red;
+        li::before {content: counter(li); color: white;
   display: inline-block; width: 1em;
   margin-left: -1em}
 
@@ -94,6 +94,7 @@
         let ls=document.getElementById('lst');
 
         let cnt=0;
+        li {counter-increment: li};
 
         s.addEventListener('click',()=>{
 
@@ -105,6 +106,8 @@
             var par=document.createElement('li');
             //var par1=document.createElement('b');
             //cnt++;
+                
+                li {counter-increment: li};
 
             let btn=document.createElement('button');
             btn.innerHTML="delete";
